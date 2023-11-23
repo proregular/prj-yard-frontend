@@ -35,7 +35,7 @@ export default function LeftNav(props) {
         component="nav"
         aria-labelledby="nested-list-subheader"
         subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
+            <ListSubheader component="div" id="nested-list-subheader" sx={{lineHeight: 1.66}}>
             사용자 메뉴
             </ListSubheader>
         }

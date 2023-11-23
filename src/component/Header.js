@@ -34,36 +34,37 @@ export default function Header(props) {
             component="div"
             sx={{
                 height: '44px',
-                padding: '8px 24px',
-                display: 'flex'
-            }}
-        >
-        <IconButton variant="contained" aria-label="menuOpen">
-            <MenuOpenIcon />
-        </IconButton>
-        <Box
-            component="div"
-            sx={{
-                flexGrow: 1
-            }}
-        >
-        </Box>
-        <Box
-            component="div"
-            sx={{
+                padding: '8px 10px',
                 display: 'flex',
-                alignItems: 'center'
+                borderBottom: "1px solid rgb(240, 240, 240)"
             }}
         >
-            <Avatar src="/broken-image.jpg" sx={{ width: 32, height: 32 }} />
-            
-            <Typography variant="h6" display="block" sx={{margin: '0 10px', fontSize: '0.875rem', fontWeight: 600}}>
-                관리자
-            </Typography>
-        </Box>
-        <IconButton variant="contained" aria-label="logout">
-            <LogoutIcon />
-        </IconButton>
+            <IconButton variant="contained" aria-label="menuOpen" sx={{color: '#000'}}>
+                <MenuOpenIcon />
+            </IconButton>
+            <Box
+                component="div"
+                sx={{
+                    flexGrow: 1
+                }}
+            >
+            </Box>
+            <Box
+                component="div"
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center'
+                }}
+            >
+                <Avatar src="/broken-image.jpg" sx={{ width: 32, height: 32 }} />
+                
+                <Typography variant="h6" display="block" sx={{margin: '0 10px', fontSize: '0.875rem', fontWeight: 600}}>
+                    관리자
+                </Typography>
+            </Box>
+            <IconButton variant="contained" aria-label="logout" sx={{color: '#000'}}>
+                <LogoutIcon />
+            </IconButton>
             
         </Box>
     );

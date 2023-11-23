@@ -41,19 +41,16 @@ export default function Dashboard(props) {
                 <Box
                     component="div"
                     sx={{
-                        backgroundColor: (theme) =>
-                        theme.palette.mode === 'light'
-                            ? theme.palette.grey[100]
-                            : theme.palette.grey[900],
                         width: '260px',
                         height: '100vh',
                         overflow: 'auto',
                         display: 'flex',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        borderRight: "1px solid rgb(240, 240, 240)"
                     }}
                 >
                     <Box component="div" sx={{
-                        height: '60px',
+                        height: '44px',
                         padding: '8px'
                     }}>
                         이미지
@@ -63,10 +60,6 @@ export default function Dashboard(props) {
                 <Box
                     component="div"
                     sx={{
-                        backgroundColor: (theme) =>
-                        theme.palette.mode === 'light'
-                            ? theme.palette.grey[100]
-                            : theme.palette.grey[900],
                         flexGrow: 1,
                         height: '100vh',
                         overflow: 'auto',
@@ -78,6 +71,7 @@ export default function Dashboard(props) {
                     <Box
                         component="div"
                         sx={{
+                            backgroundColor: '#fafafb',
                             flexGrow: 1,
                             padding: '24px',
                             display: 'flex',
