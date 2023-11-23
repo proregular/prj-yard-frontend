@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Login from './page/Login.js'
+import SignInSide from './page/SignInSide.js'
 
 function App() {
   return (
     <div className="App">
-      <Login></Login>
+      <SignInSide></SignInSide>
     </div>
   );
 }
