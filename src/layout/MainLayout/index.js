@@ -15,9 +15,11 @@ import Breadcrumbs from 'components/@extended/Breadcrumbs';
 // types
 import { openDrawer } from 'store/reducers/menu';
 
+import Login from 'pages/authentication/Login';
+
 // ==============================|| MAIN LAYOUT ||============================== //
 
-const MainLayout = (props) => {
+const MainLayout = () => {
   const theme = useTheme();
   const matchDownLG = useMediaQuery(theme.breakpoints.down('lg'));
   const dispatch = useDispatch();
@@ -30,6 +32,8 @@ const MainLayout = (props) => {
     setOpen(!open);
     dispatch(openDrawer({ drawerOpen: !open }));
   };
+
+  const [isAuthenticated, setAuth] = useState(false);
 
   // set media wise responsive drawer
   useEffect(() => {
@@ -44,17 +48,21 @@ const MainLayout = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [drawerOpen]);
 
-  return (
-    <Box sx={{ display: 'flex', width: '100%' }}>
-      <Header open={open} setAuth={props.setAuth} handleDrawerToggle={handleDrawerToggle} />
-      <Drawer open={open} handleDrawerToggle={handleDrawerToggle} />
-      <Box component="main" sx={{ width: '100%', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
-        <Toolbar />
-        <Breadcrumbs navigation={navigation} title />
-        <Outlet />
+  if(!isAuthenticated) {
+    return <Login setAuth={setAuth}/>;
+  } else {
+    return (
+      <Box sx={{ display: 'flex', width: '100%' }}>
+        <Header open={open} setAuth={setAuth} handleDrawerToggle={handleDrawerToggle} />
+        <Drawer open={open} handleDrawerToggle={handleDrawerToggle} />
+        <Box component="main" sx={{ width: '100%', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
+          <Toolbar />
+          <Breadcrumbs navigation={navigation} title />
+          <Outlet />
+        </Box>
       </Box>
-    </Box>
-  );
+    );
+  }
 };
 
 export default MainLayout;

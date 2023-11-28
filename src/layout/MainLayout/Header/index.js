@@ -59,6 +59,7 @@ const Header = ({ setAuth, open, handleDrawerToggle }) => {
       )}
     </>
   );
+  
 };
 
 Header.propTypes = {
